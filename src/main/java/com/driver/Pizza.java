@@ -9,45 +9,8 @@ public class Pizza {
     private boolean addtoppings;
     private boolean takeaway;
 
-    public boolean isTakeaway() {
-        return takeaway;
-    }
+    private boolean billgen;
 
-    public void setTakeaway(boolean takeaway) {
-        this.takeaway = takeaway;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public Boolean getVeg() {
-        return isVeg;
-    }
-
-    public void setVeg(Boolean veg) {
-        isVeg = veg;
-    }
-
-    public void setBill(String bill) {
-        this.bill = bill;
-    }
-
-    public boolean isAddcheese() {
-        return addcheese;
-    }
-
-    public void setAddcheese(boolean addcheese) {
-        this.addcheese = addcheese;
-    }
-
-    public boolean isAddtoppings() {
-        return addtoppings;
-    }
-
-    public void setAddtoppings(boolean addtoppings) {
-        this.addtoppings = addtoppings;
-    }
 
     public Pizza(Boolean isVeg) {
         this.isVeg = isVeg;
@@ -60,6 +23,7 @@ public class Pizza {
         this.addcheese = false;
         this.addtoppings = false;
         this.takeaway=false;
+        this.billgen=false;
     }
 
     public int getPrice() {
@@ -96,7 +60,10 @@ public class Pizza {
 
     public String getBill() {
         // your code goes here
-        this.bill = Integer.toString(this.price);
+        if(!billgen){
+            this.bill = Integer.toString(this.price);
+            this.billgen=true;
+        }
         return this.bill;
     }
 }
