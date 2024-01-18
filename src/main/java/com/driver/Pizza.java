@@ -49,7 +49,7 @@ public class Pizza {
 
     public void addExtraToppings() {
         // your code goes here
-        if (!addtoppings) {
+        if ((addtoppings==false && addcheese==false) || (addcheese==true && addtoppings==false) ) {
             if (isVeg) {
                 this.price = price + 70;
                 this.bill+="Extra Toppings Added: " + 70+"\n";
