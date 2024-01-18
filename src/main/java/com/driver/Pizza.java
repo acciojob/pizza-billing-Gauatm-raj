@@ -7,7 +7,7 @@ public class Pizza {
     private String bill;
     private boolean addcheese;
     private boolean addtoppings;
-    //private boolean takeaway;
+    private boolean takeaway;
 
     private boolean billgen;
 //    Base Price Of The Pizza: 300
@@ -25,11 +25,11 @@ public class Pizza {
             this.bill="Base Price Of The Pizza: "+300+"\n";
         } else {
             this.price = 400;
-            this.bill="Base Price Of The Pizza: "+300+"\n";
+            this.bill="Base Price Of The Pizza: "+400+"\n";
         }
         this.addcheese = false;
         this.addtoppings = false;
-        //this.takeaway=false;
+        this.takeaway=false;
         this.billgen=false;
     }
 
@@ -63,11 +63,11 @@ public class Pizza {
 
     public void addTakeaway() {
         // your code goes here
-        //if(!takeaway) {
+        if(!takeaway) {
             this.price += 20;
-           // this.takeaway = true;
+           this.takeaway = true;
             this.bill+="Paperbag Added: " + 20+"\n";
-       // }
+        }
     }
 
     public String getBill() {
